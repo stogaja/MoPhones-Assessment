@@ -2,7 +2,6 @@
 ## Product Analytics Report
 
 **Date:** January 2026  
-**Analyst:** Data Analytics Team
 
 ---
 
@@ -405,6 +404,3 @@ Groups: Below 5,000 | 5,000–9,999 | 10,000–19,999 | 20,000–29,999 |
 
 ---
 
-**Report Prepared By:** MoPhones Analytics Team  
-**Date:** January 2, 2026  
-**Version:** 1.0

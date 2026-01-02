@@ -232,12 +232,9 @@ When adding new models:
 ## Support
 
 For questions or issues:
-- Review the main analysis report: `CASE_STUDY_ANALYSIS.md`
+- Review the main analysis report: [docs/CASE_STUDY_ANALYSIS.md](../docs/CASE_STUDY_ANALYSIS.md)
 - Check dbt documentation: https://docs.getdbt.com
 - Review model lineage: `dbt docs generate && dbt docs serve`
 
 ---
 
-**Version**: 1.0  
-**Last Updated**: January 2, 2026  
-**Maintained By**: MoPhones Analytics Team

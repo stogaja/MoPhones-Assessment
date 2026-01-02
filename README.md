@@ -10,14 +10,13 @@ This repository contains the complete analysis and dbt implementation for the Mo
 MoPhones/
 ├── data/
 │   ├── raw/                        # Original data files
-│   │   ├── Credit Data/
-│   │   ├── NPS Data.xlsx
-│   │   └── Sales and Customer Data.xlsx
+│   │   ├── Credit Data/            # quarterly snapshots
+│   │   ├── NPS Data.xlsx           # customer satisfaction data
+│   │   └── Sales and Customer Data.xlsx # demographics and income
 │   └── processed/                  # Intermediate outputs
 ├── docs/
-│   ├── MoPhones Data Case Study.pdf
-│   ├── CASE_STUDY_ANALYSIS.md      # Main analysis report
-│   └── SUBMISSION_GUIDE.md         # Instructions for submission
+│   ├── MoPhones Data Case Study.pdf # original prompt
+│   └── CASE_STUDY_ANALYSIS.md      # Main analysis report
 ├── scripts/
 │   └── mo_phones_analysis.py       # Python analysis script
 ├── MoPhones_dbt/                    # dbt project
@@ -39,7 +38,7 @@ MoPhones/
 
 ### Questions Answered
 
-The CASE_STUDY_ANALYSIS.md file provides detailed answers to all 6 case study questions:
+The [CASE_STUDY_ANALYSIS.md](docs/CASE_STUDY_ANALYSIS.md) file provides detailed answers to all 6 case study questions:
 
 1. [x] **Portfolio Performance Over Time** - Analyzed growth, arrears trends, and segmentation
 2. [x] **Risk Indicators & Metrics** - Recommended KPIs and tracking methodology
@@ -54,7 +53,7 @@ The CASE_STUDY_ANALYSIS.md file provides detailed answers to all 6 case study qu
 
 ### What's Included
 
-The MoPhones_dbt directory contains a production-ready dbt project with:
+The [MoPhones_dbt](MoPhones_dbt/) directory contains a production-ready dbt project with:
 
 - [x] **Staging models**: Clean and standardize raw data
 - [x] **Dimension tables**: Customer demographics with calculated fields
@@ -89,7 +88,7 @@ The MoPhones_dbt directory contains a production-ready dbt project with:
 
 ### 1. Review the Analysis
 
-Read docs/CASE_STUDY_ANALYSIS.md for:
+Read [docs/CASE_STUDY_ANALYSIS.md](docs/CASE_STUDY_ANALYSIS.md) for:
 - Detailed answers to all case study questions
 - Data insights and visualizations
 - Strategic recommendations
@@ -124,7 +123,7 @@ dbt docs serve
 pip install pandas numpy openpyxl
 
 # Run the main analysis
-python scripts/mo_phones_analysis.py
+python [scripts/mo_phones_analysis.py](scripts/mo_phones_analysis.py)
 ```
 
 ---
@@ -153,34 +152,6 @@ python scripts/mo_phones_analysis.py
 - **dbt**: Production-ready data transformations
 - **SQL**: Analytical queries and data modeling
 - **Markdown**: Documentation and reporting
-
----
-
-## What This Demonstrates
-
-### Analytical Proficiency
-- [x] Extracted insights from complex, multi-source datasets
-- [x] Identified trends and patterns in portfolio performance
-- [x] Quantified relationships between credit risk and customer satisfaction
-- [x] Made data-driven recommendations
-
-### Technical Skills
-- [x] Python data analysis (pandas, numpy)
-- [x] SQL and data modeling
-- [x] dbt for production data pipelines
-- [x] Data quality testing and validation
-
-### Product Thinking
-- [x] Balanced business metrics (collections) with customer experience (NPS)
-- [x] Identified actionable insights for product and credit policy
-- [x] Proposed improvements to data infrastructure
-- [x] Considered operational constraints and trade-offs
-
-### Ability to Make Progress with Limited Information
-- [x] Made reasonable assumptions where data was unclear
-- [x] Documented limitations and their impact
-- [x] Proposed solutions to data quality issues
-- [x] Delivered complete analysis despite imperfect data
 
 ---
 
@@ -225,34 +196,12 @@ python scripts/mo_phones_analysis.py
 - **Medium confidence**: Specific account transitions
 - **Low confidence**: Causality and seasonal patterns
 
-All limitations are documented in detail in docs/CASE_STUDY_ANALYSIS.md Section 4.
+All limitations are documented in detail in [docs/CASE_STUDY_ANALYSIS.md](docs/CASE_STUDY_ANALYSIS.md) Section 4.
 
 ---
 
 ## Contact
 
-For questions about this submission, review the comprehensive analysis in docs/CASE_STUDY_ANALYSIS.md or examine the Python scripts for implementation details.
+For questions about this submission, review the comprehensive analysis in [docs/CASE_STUDY_ANALYSIS.md](docs/CASE_STUDY_ANALYSIS.md) or examine the [scripts/mo_phones_analysis.py](scripts/mo_phones_analysis.py) for implementation details.
 
 ---
-
-## Submission Checklist
-
-- [x] Answered all 6 analysis questions
-- [x] Created new customer fields (age groups, income groups)
-- [x] Analyzed portfolio performance over time
-- [x] Identified risk indicators and metrics
-- [x] Examined credit-NPS relationship
-- [x] Documented assumptions and limitations
-- [x] Provided data improvement recommendations
-- [x] Built dbt project with staging and marts layers
-- [x] Included sample raw data
-- [x] Created reusable macros
-- [x] Added data quality tests
-- [x] Documented data lineage
-- [x] Provided usage instructions
-
----
-
-**Prepared By**: Data Analytics Team  
-**Date**: January 2, 2026  
-**Version**: 1.0
