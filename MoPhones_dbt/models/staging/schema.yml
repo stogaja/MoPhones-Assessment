@@ -1,0 +1,57 @@
+version: 2
+
+sources:
+  - name: heavy_raw
+    schema: raw_data
+    tables:
+      - name: credit_snapshots
+        description: "Snapshots of credit data taken periodically"
+        columns:
+          - name: LOAN_ID
+            tests:
+              - not_null
+          - name: DATE
+            description: "Snapshot date"
+      
+      - name: customer_info
+        description: "Customer demographic and sales data"
+        columns:
+          - name: loan_id
+            tests:
+              - unique
+              - not_null
+          - name: date_of_birth
+          - name: gender
+      
+      - name: income_details
+        description: "Income verification details"
+        columns:
+          - name: loan_id
+      
+      - name: nps_surveys
+        description: "Customer NPS feedback"
+        columns:
+          - name: loan_id
+          - name: score
+            tests:
+              - accepted_values:
+                  values: [0,1,2,3,4,5,6,7,8,9,10]
+
+models:
+  - name: stg_credit_data
+    description: "Standardized credit history"
+    columns:
+      - name: loan_id
+        tests:
+          - not_null
+      - name: snapshot_date
+
+  - name: stg_customers
+    description: "Customer demographics including calculated Age and Income"
+    columns:
+      - name: loan_id
+        tests:
+          - unique
+          - not_null
+      - name: age_group
+      - name: income_group

@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: fct_credit_performance
+    description: "Fact table containing credit performance metrics with customer segmentation"
+    columns:
+      - name: loan_id
+        description: "Unique identifier for the loan"
+        tests:
+          - not_null
+      - name: snapshot_date
+        description: "Date of the credit snapshot"
+        tests:
+          - not_null
+      - name: arrears
+        description: "Amount in arrears"
+      - name: age_group
+        description: "Customer age group (18-25, 26-35, 36-45, 46-55, Above 55)"
+      - name: income_group
+        description: "Customer income group based on average monthly income"
+
+  - name: dim_customers
+    description: "Customer dimension with demographics and calculated fields"
+    columns:
+      - name: loan_id
+        description: "Unique identifier for the customer loan"
+        tests:
+          - unique
+          - not_null
+      - name: average_income
+        description: "Average monthly income calculated from total receipts / duration"
+      - name: income_group
+        description: "Income bracket classification"
+
+  - name: credits_nps_linked
+    description: "Analysis table linking credit performance to NPS scores"
+    columns:
+      - name: loan_id
+        description: "Loan identifier"
+      - name: nps_score
+        description: "Customer satisfaction score (0-10)"
+        tests:
+          - not_null
+      - name: account_status
+        description: "Account status at time of analysis"
