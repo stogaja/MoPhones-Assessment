@@ -15,7 +15,7 @@ MoPhones/
 │   │   └── Sales and Customer Data.xlsx # demographics and income
 │   └── processed/                  # Intermediate outputs
 ├── docs/
-│   ├── MoPhones Data Case Study.pdf # original prompt
+│   ├── MoPhones Data Case Study.pdf # Question document
 │   └── CASE_STUDY_ANALYSIS.md      # Main analysis report
 ├── scripts/
 │   └── mo_phones_analysis.py       # Python analysis script
@@ -203,5 +203,6 @@ All limitations are documented in detail in [docs/CASE_STUDY_ANALYSIS.md](docs/C
 ## Contact
 
 For questions about this submission, review the comprehensive analysis in [docs/CASE_STUDY_ANALYSIS.md](docs/CASE_STUDY_ANALYSIS.md) or examine the [scripts/mo_phones_analysis.py](scripts/mo_phones_analysis.py) for implementation details.
+
 
 ---
