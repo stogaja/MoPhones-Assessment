@@ -18,7 +18,7 @@ def load_credit_data():
     for filename in all_files:
         df = pd.read_csv(filename)
         # Ensure DATE is datetime
-        df['DATE'] = pd.to_datetime(df['DATE'], dayfirst=True) # Assuming DD/MM/YYYY based on 01-01-2025
+        df['DATE'] = pd.to_datetime(df['DATE'], dayfirst=True) # DD/MM/YYYY example on 01-01-2025
         df_list.append(df)
     
     credit_df = pd.concat(df_list, ignore_index=True)
@@ -42,7 +42,7 @@ def load_customer_data():
     dob_df.rename(columns={'Loan Id': 'LOAN_ID', 'date_of_birth': 'DOB'}, inplace=True)
     income_df.rename(columns={'Loan Id': 'LOAN_ID'}, inplace=True)
     
-    # print(f"DOB Sheet Columns: {dob_df.columns.tolist()}") # Debug
+    # print(f"DOB Sheet Columns: {dob_df.columns.tolist()}") 
     
     return dob_df, income_df
 
@@ -66,7 +66,7 @@ def calculate_age_group(age):
     if 36 <= age <= 45: return '36-45'
     if 46 <= age <= 55: return '46-55'
     if age > 55: return 'Above 55'
-    return 'Under 18' # or unknown
+    return 'Under 18'
 
 def calculate_income_group(income):
     if pd.isna(income): return 'Unknown'
@@ -100,7 +100,7 @@ def main():
     print(joined_df[['DATE', 'DOB']].dtypes)
     print(joined_df[['DATE', 'DOB']].head())
 
-    # Ensure datetime again just in case merge garbled it (unlikely but possible if mixed types)
+    # Ensure datetime again 
     joined_df['DATE'] = pd.to_datetime(joined_df['DATE'], errors='coerce')
     joined_df['DOB'] = pd.to_datetime(joined_df['DOB'], errors='coerce')
 
@@ -122,7 +122,7 @@ def main():
     
     # Average Income = Total / Duration
     # Handle duration 0 or NaN
-    income_df['Duration'] = pd.to_numeric(income_df['Duration'], errors='coerce').fillna(1) # void div by zero
+    income_df['Duration'] = pd.to_numeric(income_df['Duration'], errors='coerce').fillna(1)
     income_df['Average_Income'] = income_df['Total_Income'] / income_df['Duration']
     
     income_df['Income Group'] = income_df['Average_Income'].apply(calculate_income_group)
